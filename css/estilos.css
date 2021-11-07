@@ -14,6 +14,7 @@
 	border-radius: 20px;
 	font-size:16px;
 	height: 450px;
+	height: fit-content;
 }
 .proyectoMain button{
 	border-radius: 20px;
@@ -148,8 +149,15 @@ footer{
 #contenido{
 	margin-top: 5%;
 }
-.espacios{
-	height: fit-content;
+.servicio{
+	width: 50%;
+	margin: auto;
+	border-radius: 25px;
+	border:2px solid rgb(177, 173, 173);
+	padding: 5%;
+}
+.servicio img{
+	margin: auto;
 }
 
 

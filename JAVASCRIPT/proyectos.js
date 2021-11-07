@@ -111,7 +111,8 @@ const actualizarAvance = async (objeto) => {
     licencia,
     Asesores,
     dueño,
-    etapa
+    etapa,
+    estado
   });
   Swal.fire({
     position: 'top-end',

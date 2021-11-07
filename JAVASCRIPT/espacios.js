@@ -116,7 +116,7 @@ const aprobarReserva=async (objeto)=>{
   let nombre = reserva.nombre;
   let apellido = reserva.apellido;
   let cedula = reserva.cedula;
-  let fecha = reserva.cedula;
+  let fecha = reserva.fecha;
   let Hora = reserva.Hora;
   let cantidadHoras = reserva.cantidadHoras;
   let espacio = reserva.espacio

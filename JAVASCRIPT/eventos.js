@@ -14,7 +14,9 @@ const mostrarEventos = async () => {
                 ${datos.nombre}<br>
                 ${datos.informacion}<br><br>
                 ${datos.fecha}<br><br> 
-                <button id="${element.id}" onclick="vistaFormulario(this)" class="borderBoton btn btn-warning">Asistir</button>
+                <button id="${element.id}" onclick="vistaFormulario(this)" class="borderBoton btn btn-warning">Asistir</button><br><br>
+                <button id="${element.id}" onclick="asistentes(this)" class="borderBoton btn btn-warning">Asistentes</button>
+
                 <br><br>
               </center>
             </div>
@@ -45,4 +47,38 @@ const confirmarAsistencia = async(objeto) => {
   })
   
   window.location.href="eventos.html"
+}
+const asistentes=async(objeto)=>{
+  let reservas = await getAsistencia(objeto.id);
+  let evento=await getEvento(objeto.id);
+  evento=evento.data();
+
+  let contenido=document.getElementById("contenido");
+  contenido.innerHTML
+  =`
+  <center><h2>Asistentes para el evento ${evento.nombre}</h2></center>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Cedula</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Apellido</th>
+        </tr>
+    </thead>
+    <tbody id="table1">
+    </tbody>
+    </table>
+  `;
+  let table1=document.getElementById("table1");
+  reservas.forEach(element=>{
+    let datos=element.data();
+    
+    table1.innerHTML+=`
+    <tr>
+      <td>${datos.cedula}</td>
+      <td>${datos.nombre}</td>
+      <td>${datos.apellido}</td>
+  </tr>
+    `
+  })
 }
